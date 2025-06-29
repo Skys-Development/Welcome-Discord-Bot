@@ -13,6 +13,6 @@ module.exports = {
     memberRole: "DEFAULT_MEMBER_ROLE_ID",
 
     // --- Bot Info ---
-    name: "TarinWelcomer",
+    name: "William2Sober",
     devs: ["YOUR_DISCORD_USER_ID"],
 };
