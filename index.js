@@ -51,7 +51,6 @@ client.on("ready", async (app) => {
     try {
         await reloadFetchingInvite();
         await updateVoiceChannelName();
-        await connectToInfoChannel();
     } catch (err) {
         console.error("Error during bot initialization:", err);
     }
@@ -73,7 +72,7 @@ async function updateVoiceChannelName() {
     if(!members) return console.error('There is no Members!');
 
     const memberCount = await members.filter((user) => user.user.bot === false).size;
-    await voiceChannel.setName(`・CMT : ${memberCount}`);
+    await voiceChannel.setName(`👤・Members ${memberCount}`);
     console.log(`Updated voice channel name to: Members: ${memberCount}`);
 }
 
@@ -83,10 +82,6 @@ async function reloadFetchingInvite() {
         console.log(`Invite Fetching System : All Invites Creations Backed Up `);
         invites.each(inv => guildInvites.get(serverID).push({"URL":`${inv.code}`,"Inviter":`${inv.inviter.id}`,"Uses":`${inv.uses}`}));
     }).catch(err => {console.log("Invite Fetching System : I Can't Backup Invitations")})
-}
-
-async function connectToInfoChannel() {
-    client.guilds.cache.get(serverID).channels.fetch(infoChannel).then((channel) => {joinVoiceChannel({channelId: channel.id,guildId: channel.guild.id,adapterCreator: channel.guild.voiceAdapterCreator})})
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------|
