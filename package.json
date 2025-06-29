@@ -1,0 +1,25 @@
+{
+  "name": "tarin-welcomer",
+  "version": "1.0.0",
+  "description": "Tarin Community Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "better-sqlite3": "^11.10.0",
+    "canvas": "^2.11.2",
+    "discord.js": "^14.19.3",
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1"
+  },
+  "engines": {
+    "node": "^20.15.0"
+  },
+  "repository": {
+    "url": "https://discord.gg/nES7cuEsdR"
+  },
+  "author": "Maniseniler",
+  "license": "MIT"
+}
