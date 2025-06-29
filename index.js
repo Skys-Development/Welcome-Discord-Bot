@@ -55,27 +55,6 @@ client.on("ready", async (app) => {
     } catch (err) {
         console.error("Error during bot initialization:", err);
     }
-
-    app.user.setPresence({activities: [{ name: `Tarin Bot Restarting`, type: ActivityType.Custom }],status: 'online',});
-
-    const intervalMs = 10000;
-    let i = -1;
-    let j = 1;
-
-    setInterval(async () => {
-        try {
-            const statuses = [`Powered By Tarin`, `Version : ${botVersion}`];
-            
-            if (i === -1 || i === 0) j = 1;
-            else if (i >= statuses.length - 1) j = 1 - statuses.length;
-            i += j;
-
-            app.user.setPresence({activities: [{ name: statuses[i], type: ActivityType.Custom }],status: 'online',});
-        } catch (err) {console.error("❌ Error updating presence:", err);}
-    }, intervalMs);
-});
-
-
 //-------------------------------------------------------------------------------------------------------------------------------------------|
 // |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Reloading Fonctions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 //-------------------------------------------------------------------------------------------------------------------------------------------|
